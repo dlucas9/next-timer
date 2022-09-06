@@ -26,13 +26,11 @@ const Home = () => {
 
   const onChangeHandler = (e) => {
     setInput(e.target.value)
-    socket.emit('input-change', e.target.value)
   }
 
   const onStartController = (e) => {
     socket.emit('start', input)
   }
-
 
   return (
     <div className={styles.container}>
@@ -48,6 +46,7 @@ const Home = () => {
         </h1>
         <input
           placeholder="Set Counter"
+          type="number"
           value={input}
           onChange={onChangeHandler}
         />
